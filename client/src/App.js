@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import NavBar from './components/NavBar';
 import Notespace from './components/Notespace'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 
 let navItems = [
@@ -28,9 +29,32 @@ let notes = [
   }
 ]
 
+
+
 function App() {
+  const [backEndData, setBackEndData] = useState([{}])
+
+  useEffect(() => {
+    fetch("/api")
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        console.log(data.users)
+        setBackEndData(data)
+      })
+  }, [])
+  
   return (
     <div>
+      <ul>
+        {backEndData.users?.map(user => {
+          return (
+            <li>
+              {user}
+            </li>
+          )
+        })}
+      </ul>
       <header>
         <NavBar classname=" position-sticky" links={navItems} user={user}></NavBar>
       </header>
