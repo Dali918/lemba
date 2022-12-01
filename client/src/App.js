@@ -17,10 +17,12 @@ let user = {
 
 let notes = [
   {
+    noteID: "1",
     title: "Hello World!",
     text: "Hello there, I am using WhatsApp, how are you today?",
   },
   {
+    noteID: "2",
     title: "Hello World!",
     text: "Hello there, I am using WhatsApp, how are you today?",
   }

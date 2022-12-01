@@ -5,11 +5,11 @@ function NoteSpace(props) {
     let notes = [];
     if (Array.isArray(props.notes) && props.notes) {
         props.notes.forEach(element => {
-            notes.push(<Note title={element.title} text={element.text}></Note>)
+            notes.push(<Note title={element.title} text={element.text} noteID={element.noteID}></Note>)
         });
     }
     if (notes.length > 0) {
-        return (<div class="card-group" className=" row row-cols-auto border border-gray rounded justify-content-center m-3 p-3">
+        return (<div class="card-group" className=" row row-cols-auto border border-gray rounded m-3 p-3">
             {notes}
         </div>)
     }
