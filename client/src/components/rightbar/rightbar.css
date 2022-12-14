@@ -1,0 +1,33 @@
+.rightbar{
+    flex: 3.5;
+    height: calc(100vh - 50px);
+    position: sticky;
+    top: 50px;
+
+}
+.rightbarWrapper{
+    padding: 20px 20px 0 0;
+    
+}
+
+
+.topicsContainer{
+    display: flex;
+    align-items: center;
+    
+    
+}
+.topicsText{
+    font-weight: bold;
+    font-size: 15px;
+    background-color: rgb(236, 233, 233);
+    margin: 1%;
+    margin-bottom: 15%;
+    border-radius: 5px;
+    margin-left: 5%;
+    cursor: pointer;
+  
+    
+}
+
+
