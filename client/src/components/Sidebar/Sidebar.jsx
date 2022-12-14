@@ -9,8 +9,16 @@ export default function Sidebar(){
             <div className="sidebarWrapper">
                 <ul className='sidebarList'>
                     <li className="sidebarListItem">
-                        <i className="bi bi-house me-2"></i>
-                        <span className="sidebarListItemText">Home</span>
+                        <a href='/' className='text-decoration-none'>
+                            <i className="bi bi-house me-2"></i>
+                            <span className="sidebarListItemText">Home</span>
+                        </a>
+                    </li>
+                    <li className="sidebarListItem">
+                        <a href='/notes' className='text-decoration-none'>
+                            <i class="bi bi-journal me-2"></i>
+                            <span className="sidebarListItemText">Notes</span>
+                        </a>
                     </li>
                     <li className="sidebarListItem">
                         <i className="bi bi-bell me-2"></i>

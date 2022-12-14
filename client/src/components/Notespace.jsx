@@ -49,6 +49,7 @@ function NoteSpace(props) {
         };
         
         const handleDelete = (noteID) => {
+            window.confirm("Do you want to delete this note?");
             console.log(noteID, "TODO: Delete note.");
         }
     
@@ -66,7 +67,7 @@ function NoteSpace(props) {
                     </p>
                 </div>
                 <div class="d-flex flex-column position-absolute border rounded-pill" style={toolboxstyle}  >
-                    <button className="btn btn-link p-1 px-1 text-center" type="button" onClick={() => handleEdit(props.note)}><i class="bi bi-pencil" style={{color : "black"}}></i></button>
+                    <button className="btn btn-link p-1 px-1 text-center" type="button" onClick={(e) => handleEdit(props.note)}><i class="bi bi-pencil" style={{color : "black"}}></i></button>
                     <button className="btn btn-link p-0 px-1 text-center" type="button" onClick={(e) => handleDelete(props.note)}><i class="bi bi-trash" style={{color : "black"}}></i></button>
                     <button className="btn btn-link p-0 px-1 text-center" type="button" onClick={(e) => console.log("I do nothing :v")}><i class="bi bi-three-dots" style={{color : "black"}}></i></button>
                 </div>
@@ -78,20 +79,33 @@ function NoteSpace(props) {
     function NoteEditor(props) {
         let style = {resize: "none"};
         let colorpalette = []
-        colors.forEach((color) => {
+        colors.forEach((color, index) => {
             let p_style = "flex-grow-1 mx-2 btn btn-primary " + color;
             if (colors[parseInt(activeNote.color)] === color) {
                 colorpalette.push(
-                    <a className={p_style} disabled>Selected</a>
+                    <a className={p_style} disabled onClick={(e) => changeColor(e, index)}>Selected</a>
                 );
             }
             else {
                colorpalette.push(
-                <a className={p_style}></a>
+                <a className={p_style} onClick={(e) => changeColor(e, index)}></a>
                 ); 
             }
             
         });
+
+        const changeTitle = (e, title) => {
+            
+            setActiveNote({noteID : activeNote.noteID, "title": title, text: activeNote.text, color: activeNote.color})
+        };
+        const changeText = (e, text) => {
+            setActiveNote({noteID : activeNote.noteID, title: activeNote.title, "text": text, color: activeNote.color})
+        };
+        const changeColor = (e, color) => {
+            setActiveNote({noteID : activeNote.noteID, title: activeNote.title, "text": activeNote.text, "color": color})
+        };
+
+        let currentNote = activeNote;
         return (<div class="border px-4 py-2 rounded d-flex flex-column flex-grow-1">
             <form class="d-flex flex-column flex-grow-1 h-auto">
                 <div class="m">
@@ -101,11 +115,11 @@ function NoteSpace(props) {
                     </div>
                 </div>
                 <div class="mb-0">
-                    <input type="text" class="fs-3 my-2 form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="A new adventure..." value={activeNote.title}/>
+                    <input type="text" class="fs-3 my-2 form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="A new adventure..." value={currentNote.title} /*onChange={(e) => changeTitle(e, e.target.value)}*//>
                     {/* <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> */}
                 </div>
                 <div class="d-flex mb-3 flex-grow-1 rounded-bottom">
-                    <textarea class="form-control d-flex" aria-label="With textarea" style={style} placeholder='Today was a good day because...' value={activeNote.text}></textarea>
+                    <textarea class="form-control d-flex" aria-label="With textarea" style={style} placeholder='Today was a good day because...' value={currentNote.text}></textarea>
                 </div>
             </form>
         </div>);

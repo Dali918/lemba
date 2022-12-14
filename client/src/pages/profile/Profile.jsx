@@ -1,7 +1,7 @@
 import React from 'react'
 import "./profile.css"
 import Topbar from '../../components/topbar/Topbar'
-import Sidebar from '../../components/Sidebar/Sidebar'
+import Sidebar from '../../components/sidebar/Sidebar'
 import Feed from '../../components/feed/Feed'
 import Rightbar from '../../components/rightbar/Rightbar'
 import { PlayCircleOutline, GraphicEqOutlined, BookmarkOutlined} from "@mui/icons-material"
@@ -9,7 +9,7 @@ import { PlayCircleOutline, GraphicEqOutlined, BookmarkOutlined} from "@mui/icon
 export default function Profile() {
   return (
     <div>
-            <Topbar/>
+          <Topbar/>
             <div className="profile">
                 <Sidebar/>
                 <div className="profileRight">
