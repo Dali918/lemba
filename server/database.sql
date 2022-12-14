@@ -1,4 +1,4 @@
-CREATE DATABASE notes;
+lCREATE DATABASE notes;
 
 CREATE TABLE text_note(
     text_note_id SERIAL PRIMARY KEY,
