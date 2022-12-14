@@ -9,7 +9,7 @@ import { PlayCircleOutline, GraphicEqOutlined, BookmarkOutlined} from "@mui/icon
 export default function Profile() {
   return (
     <div>
-            <Topbar/>
+          <Topbar/>
             <div className="profile">
                 <Sidebar/>
                 <div className="profileRight">

@@ -6,7 +6,7 @@ export default function Topbar(){
     return (
         <div className="topbarContainer">
             <div className="topbarLeft">
-                <span className="logo">LEMBA</span>
+                <a className="logo text-decoration-none" href="/">LEMBA</a>
             </div>
             <div className="topbarCenter">
                 <div className="searchbar"> 
@@ -15,7 +15,12 @@ export default function Topbar(){
                 </div>
             </div>
             <div className="topbarRight">
-                <div className="topbarRightCenter">Topics</div>
+                {/* <div className="topbarRightCenter">Topics</div> */}
+                <a className="btn d-flex flex-row align-items-center justify-content-center px-2 mx-3 rounded-pill text-decoration-none btn-outline-dark" style={{float: "right"}} href="/me">
+                    <i style={{fontSize : "30px"}} class="bi bi-person-circle"></i>
+                    <p className="m-0 mx-1" style={{fontSize : "20px"}}>Jessica Bonet</p>
+                </a>
+                
             </div>
         </div>
     )

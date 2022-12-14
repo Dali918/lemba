@@ -2,12 +2,6 @@ import React from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
 import NoteSpace from "../../components/Notespace";
-
-let navItems = [
-    {linkname: "Home", link: "/", linkicon: "bi-house-heart"},
-    {linkname: "Bell", link: "/", linkicon: "bi-bell"},
-    {linkname: "Saved notes", link: "/", linkicon: "bi-bookmark" }
-  ];
   
   let user = {
     name : "John doe",
