@@ -6,12 +6,16 @@ import NotePage from './pages/NotePage/NotePage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import Home from './pages/home_feed/Home';
+import Profile from './pages/profile/Profile';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <NotePage/>
+    <Home/>
+    {/* <Profile/> */}
   </React.StrictMode>
 );
 
