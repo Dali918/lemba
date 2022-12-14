@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-// import Note from "./Note";
-import NoteEditor from "./NoteEditor";
 
 const colors = ['text-bg-primary', 'text-bg-secondary', 'text-bg-success', 'text-bg-danger', 'text-bg-warning', 'text-bg-info', 'text-bg-light', 'text-bg-dark'];
 

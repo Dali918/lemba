@@ -15,6 +15,7 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     <Home/>
+    {/* <NotePage></NotePage> */}
     {/* <Profile/> */}
   </React.StrictMode>
 );
