@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import NotePage from './pages/NotePage/NotePage';
+import NotePage from './pages/notepage/NotePage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -14,8 +14,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    {/* <Home/> */}
-    <Login></Login>
+    <Home/>
+    {/* <Login></Login> */}
     {/* <NotePage></NotePage> */}
     {/* <Profile/> */}
   </React.StrictMode>
