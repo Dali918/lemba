@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Home from './pages/home_feed/Home';
 import Profile from './pages/profile/Profile';
-
+import Login from './pages/login/login'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
