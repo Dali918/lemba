@@ -8,13 +8,15 @@ import Topbar from './components/topbar/Topbar';
 import Home from './pages/home_feed/Home';
 import NotePage from './pages/notepage/NotePage';
 import Profile from './pages/profile/Profile';
+import Login from './pages/login/login'
 
 const router = createBrowserRouter([
   {
     path: "/", element: <Home/>
   },
   {path: "/notes", element: <NotePage/>},
-  {path: "/me", element: <Profile/>}
+  {path: "/me", element: <Profile/>},
+  {path: '/login', element: <Login/>}
 ])
 
 function App() {
