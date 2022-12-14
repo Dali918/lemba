@@ -1,12 +1,21 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000
+const chalk = require('chalk')
 const pool = require("./db") //require that databse be connected from db.js
 const cors = require("cors")
+const debug   =  require('debug')('app')
+const morgan  = require("morgan")
+
+
 
 //middleware
 app.use(cors())
-app.use(express.json()) //allows use to use req.body
+app.use(express.json())
+app.use(morgan("tiny"))
+// app.use(helmelt())
+// app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"})) 
+//allows use to use req.body
 //set up get api rouute to with response
 
 
@@ -56,7 +65,7 @@ app.get("/notes/:id", async (req, res) => {
 
 //update a note
 app.put("/notes/:id", async (req, res) => {
-    try {
+    try {   
 
         const{id} = req.params;
         const {description} = req.body;
@@ -84,6 +93,6 @@ app.delete("/notes/:id", async(req, res)=>{
 
 })
 app.listen(port, () => {
-    console.log(`Server listening on ${port}`);
+    console.log(`Server listening to port ${chalk.green(port)}` );
 });
 
