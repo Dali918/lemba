@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import './App.css';
 
-export default function App() {
+
+function App() {
   const [backEndData, setBackEndData] = useState([{}])
 
   useEffect(() => {
@@ -12,16 +14,21 @@ export default function App() {
         setBackEndData(data)
       })
   }, [])
-
+  
   return (
-    <ul>
-      {backEndData.users?.map(user => {
-        return (
-          <li>
-            {user}
-          </li>
-        )
-      })}
-    </ul>
-  )
+    <div>
+      <ul>
+        {backEndData.users?.map(user => {
+          return (
+            <li>
+              {user}
+            </li>
+          )
+        })}
+      </ul>
+    </div>
+  );
 }
+
+
+export default App;

@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import NotePage from './pages/NotePage/NotePage';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import Home from './pages/home_feed/Home';
 import Profile from './pages/profile/Profile';
 
@@ -13,7 +16,6 @@ root.render(
     {/* <App /> */}
     <Home/>
     {/* <Profile/> */}
-    
   </React.StrictMode>
 );
 
